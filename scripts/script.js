@@ -1,8 +1,15 @@
-var tweet = "<div style='margin: 20px 0; padding: 10px; background: #eee'>The big fight live: Ham Vs Cheese: </div>";
+var wrapper = "<div class='wrapper'>";
+var button = $(".button");
+var wrapped = true;
 
-// $("#tweets div").append(tweet);
-// $("#tweets div").prepend(tweet);
-// $("#tweets div").before(tweet);
-// $("#tweets div p").after(tweet);
-$("#tweets div").html(tweet);
-// $("#tweets div p").text(tweet);
+button[0].onclick = function(){
+    if(wrapped){
+        $("section").unwrap();
+        wrapped = false;
+        button.text("Wrap");
+    } else{
+        $("section").wrapAll(wrapper);
+        wrapped = true;
+        button.text("Unwrap");
+    }
+};
